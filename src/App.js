@@ -8,6 +8,7 @@ import EditProduct from './pages/products/EditProduct';
 import EditCustomer from './pages/customers/EditCustomer';
 
 function App() {
+  document.body.style.backgroundColor = 'lightgray'
   return (
     <div className="App">
       <Routes>

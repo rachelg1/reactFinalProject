@@ -1,8 +1,12 @@
 import React from 'react'
+import Menu from '../menu/Menu'
 
 const Purchases = () => {
     return (
-        <div>purchases</div>
+        <div>
+            <Menu />
+            purchases
+        </div>
     )
 }
 

@@ -21,7 +21,7 @@ const customersSlice = createSlice({
     initialState,
     reducers: {
         addCustomer: (state, action) => {
-            state.push(action.payload)
+            state.push({ id: nanoid(), ...action.payload })
         },
         deleteCustomer: (state, action) => {
             state.splice(state.findIndex(customer => customer.id === action.payload), 1)

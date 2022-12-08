@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Card, CardContent, Typography } from '@mui/material'
+import BuyingCustomers from './BuyingCustomers'
 
 const ProductData = (props) => {
     const { product } = props
@@ -19,6 +20,7 @@ const ProductData = (props) => {
                     </Typography>
                 </CardContent>
             </Card>
+            <BuyingCustomers productId={product.id} />
         </div>
     )
 }

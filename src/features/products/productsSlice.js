@@ -21,7 +21,14 @@ const productsSlice = createSlice({
     initialState,
     reducers: {
         addProduct: (state, action) => {
-            state.push(action.payload)
+            state.push({ id: nanoid(), ...action.payload })
+        },
+        updateProduct: (state, action) => {
+            return state.map(item => {
+                if (item.id === action.payload.id)
+                    return { ...item, ...action.payload }
+                return item
+            })
         },
         deleteProduct: (state, action) => {
             state.splice(state.findIndex(product => product.id === action.payload), 1)
@@ -30,5 +37,5 @@ const productsSlice = createSlice({
 })
 export const selectAllProducts = state => state.products
 
-export const { addProduct, deleteProduct } = productsSlice.actions;
+export const { addProduct, updateProduct, deleteProduct } = productsSlice.actions;
 export default productsSlice.reducer

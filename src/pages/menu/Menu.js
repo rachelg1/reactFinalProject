@@ -1,16 +1,26 @@
+import { Table, TableBody, TableCell, TableRow } from '@mui/material'
 import React from 'react'
 import { Link } from 'react-router-dom'
 
 const Menu = () => {
     return (
         <div>
-            Menu
-            <br />
-            <Link to='products'>Products</Link>
-            <br />
-            <Link to='customers'>Customers</Link>
-            <br />
-            <Link to='purchases'>Purchases</Link>
+            <Table style={{ backgroundColor: 'lightyellow' }}>
+                <TableBody>
+                    <TableRow>
+                        <TableCell style={{ textAlign: 'center' }}>
+                            <Link to='/products'>Products</Link>
+                        </TableCell>
+                        <TableCell style={{ textAlign: 'center' }}>
+                            <Link to='/customers'>Customers</Link>
+                        </TableCell>
+                        <TableCell style={{ textAlign: 'center' }}>
+                            <Link to='/purchases'>Purchases</Link>
+                        </TableCell>
+                    </TableRow>
+                </TableBody>
+            </Table>
+
         </div>
     )
 }

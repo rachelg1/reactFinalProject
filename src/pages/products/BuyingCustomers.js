@@ -1,16 +1,15 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { selectAllCustomers } from '../../features/customers/customersSlice'
 import { selectAllPurchases } from '../../features/purchases/purchasesSlice'
-import Customer from './Customer'
+import Customer from './BuyingCustomer'
 
-const Customers = (props) => {
+const BuyingCustomers = (props) => {
     const { productId } = props
 
     const purchases = useSelector(selectAllPurchases).filter(p => p.product_id === productId)
 
     return (
-        <div>Customers
+        <div>
             {purchases.map(p => {
                 return <Customer key={p.id} purchases={p} />
             })}
@@ -18,4 +17,4 @@ const Customers = (props) => {
     )
 }
 
-export default Customers
+export default BuyingCustomers
