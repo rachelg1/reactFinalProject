@@ -45,7 +45,7 @@ const EditProduct = () => {
                     <Button style={{ textTransform: 'none' }} onClick={() => navigate('/products')}>Back</Button>
                 </CardContent>
             </Card>
-            <BuyingCustomers />
+            <BuyingCustomers productId={product.id} />
         </div>
     )
 }

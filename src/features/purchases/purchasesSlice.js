@@ -15,10 +15,13 @@ const purchasesSlice = createSlice({
         },
         deletePurchaseByProduct: (state, action) => {
             return state.filter(purchase => purchase.productId !== action.payload)
+        },
+        deletePurchaseByCustomer: (state, action) => {
+            return state.filter(purchase => purchase.customerId !== action.payload)
         }
     }
 })
 export const selectAllPurchases = state => state.purchases
 
-export const { addPurchase, deletePurchase, deletePurchaseByProduct } = purchasesSlice.actions;
+export const { addPurchase, deletePurchase, deletePurchaseByProduct, deletePurchaseByCustomer } = purchasesSlice.actions;
 export default purchasesSlice.reducer

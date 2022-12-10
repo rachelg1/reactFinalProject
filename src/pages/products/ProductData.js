@@ -19,8 +19,9 @@ const ProductData = (props) => {
                         Quantity: {product.quantity}
                     </Typography>
                 </CardContent>
+                <BuyingCustomers productId={product.id} />
             </Card>
-            <BuyingCustomers productId={product.id} />
+
         </div>
     )
 }

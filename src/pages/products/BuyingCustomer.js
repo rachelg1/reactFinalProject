@@ -11,13 +11,13 @@ const BuyingCustomer = (props) => {
     const [displayAddRegion, setDisplayAddRegion] = useState(false)
     return (
         <div style={{ padding: 20 }}>
-            <Card>
+            <Card style={{ backgroundColor: 'lightcyan' }}>
                 <CardContent>
                     <Typography variant='body1'>
                         Name: <Link to={'/customers/' + customer.id} >{customer.firstName + ' ' + customer.lastName}</Link>
                     </Typography>
                     <Typography variant='body1'>
-                        Purchase Data: {purchase.date}
+                        Purchased Data: {purchase.date}
                     </Typography>
                     <Button onClick={() => setDisplayAddRegion(true)}>Add</Button>
                     {displayAddRegion && <CustomerAdd customerId={customer.id} setDisplay={setDisplayAddRegion} />}
